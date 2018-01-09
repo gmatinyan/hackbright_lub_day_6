@@ -9,6 +9,8 @@ def count_words(file):
         words = line.split()
         
         for word in words:
+            word = word.lower()
+            word = word.strip("':(,;.\")?!_-")
             words_count[word] = words_count.get(word, 0) + 1
 
     for word, count in words_count.iteritems():
